@@ -34,6 +34,7 @@ int main(void) {
 		num -= arr[i];
 	}
 	cout << result;
+	
 
 	return 0;
 }
