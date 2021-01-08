@@ -124,6 +124,7 @@ int cal_count(int num)
 	else {
 		cal += (num / 1);
 		num = num % 1;
+		
 	}
 
 	return cal;
