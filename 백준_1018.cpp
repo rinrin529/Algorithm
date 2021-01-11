@@ -24,14 +24,14 @@ int main(void) {
 		while (start_m + 8 <= m) {
 			for (int i = start_n; i < start_n + 8; i++) { // 행 체크
 				for (int j = start_m; j < start_m + 8; j++) { // 열 체크
-					if ((i + j) % 2 == 0) {
+					if ((i + j) % 2 == 0) { //시작이 black
 						if (arr[i][j] == 'B')
 							num_w++;
 						else
 							num_b++;
 					}
 					else {
-						if (arr[i][j] == 'B')
+						if (arr[i][j] == 'B') //시작이 white
 							num_b++;
 						else
 							num_w++;
