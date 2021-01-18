@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-
+   
 char arr[9][9] = { 0 };
 char lab[9][9] = { 0 };
 int zero_point[2][70] = { 0 };
