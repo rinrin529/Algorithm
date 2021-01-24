@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-
+  
 int inside_arr(int x, int y);
 char arr[100][100] = { 0 };
 int N = 0;
