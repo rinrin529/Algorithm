@@ -18,4 +18,4 @@ int maxArea(vector<int>& height) {
     }
         
     return answer;
-    }
+}
