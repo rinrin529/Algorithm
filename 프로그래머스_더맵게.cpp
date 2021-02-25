@@ -10,7 +10,7 @@ int solution(vector<int> scoville, int K) {
     
     for(int i=0; i<scoville.size(); i++)
         pq.push(scoville[i]); //priority queue 사용
-    
+     
     while(1){
         if(pq.top() >= K)
             break;
