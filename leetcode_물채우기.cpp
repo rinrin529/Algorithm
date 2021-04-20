@@ -13,7 +13,7 @@ int maxArea(vector<int>& height) {
         else{
            x1+=1;
             num = ((height[x1]<height[x2]) ? height[x1]:height[x2])*(x2-x1);
-            answer = (num>answer) ? num : answer;
+            answer = (num>answer) ? num : answer; 
         }
     }
         
