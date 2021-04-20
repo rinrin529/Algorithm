@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <cstring>
+
 using namespace std;
 int n = 0, l = 0, r = 0;
 int map[52][52] = { 0, };
