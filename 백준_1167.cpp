@@ -32,7 +32,7 @@ int bfs(int i) {
 
 		if (map[v] < temp[v]) { // 가장 긴 거리로 update
 			map[v] = temp[v];
-			if (ans < map[v]) {
+			if (ans < map[v]) { 
 				ans = map[v];
 				Max_node = v;
 			}
