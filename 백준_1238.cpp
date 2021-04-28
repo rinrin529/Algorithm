@@ -8,7 +8,7 @@
 */
 #include <iostream>
 #include <cstring>
-
+ 
 using namespace std;
 #define none 1000000
 
