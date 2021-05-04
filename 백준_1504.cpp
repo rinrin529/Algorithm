@@ -1,10 +1,3 @@
-/*
-  처음에 bfs를 사용했는데 틀렸다. 아무리 찾아도 모르겠어서 백준에 질문을 했더니
-  [간선에 가중치가 있는 문제는 BFS로 풀 수 없고 다익스트라를 써야 합니다. 
-  이 코드는 간선을 적게 사용하지만 거리는 더 먼 경로를 그 정점까지의 최단경로로 미리 확정짓고 있기 때문에 
-  나중에 간선을 더 많이 사용하지만 거리는 짧은 경로를 발견하더라도 갱신하지 않고 넘어가게 됩니다.]
-  라고 했다. 가중치가 있는 것은 반드시 다익스트라로,,,
-*/
 #include <iostream>
 
 using namespace std;
@@ -25,13 +18,13 @@ int find_smallest_time(int start, int* visit, int* dist) {
 			time = dist[i];
 			idx = i;
 		}
-	}
+	} 
 	return idx;
 }
 
 void Dijkstra_v1(int start ) { //newNode 시작점 x 목적지 idx 처음 시작점
 	int visit[801] = { 0, };
-	int newNode = start;
+	int newNode = start; 
 
 	for (int i = 1; i <= n; i++)
 		dist_v1[i] = none;
