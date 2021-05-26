@@ -2,11 +2,11 @@
 #include <vector>
 #include <string>
 #include <math.h>
-#include <algorithm>
+#include <algorithm>  
 
 using namespace std;
 int n = 0, k = 0;
-vector <char> number;
+vector <char>  number;
 vector <int> answer;
 int idx[4] = { 0, };
 
