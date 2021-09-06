@@ -103,5 +103,5 @@ int main(void) {
 		cout <<"#"<< i << " " << answer[k-1] << endl;
 	}
 
-	return 0;
+	return 0; 
 }
