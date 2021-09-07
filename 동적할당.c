@@ -20,5 +20,5 @@ int* solution(int prices[], size_t prices_len) {
         }
         answer[i]=count;
     }
-    return answer;
+    return answer; 
 }
