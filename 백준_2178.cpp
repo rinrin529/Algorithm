@@ -54,4 +54,4 @@ int inside_arr(int x, int y)
 	else {
 		return 0;
 	}
-}
+} 
