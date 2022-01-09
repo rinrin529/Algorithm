@@ -28,7 +28,7 @@ int main(void) {
 	int b = 0;
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < M; j++) {
-			if (lab[i][j] == '0') {
+			if (lab[i][j] == '0') { 
 				zero_point[0][b] = i;
 				zero_point[1][b] = j;
 				b++;

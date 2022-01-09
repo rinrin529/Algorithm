@@ -1,77 +1,63 @@
 #include <iostream>
-#include <algorithm>
-#include <functional>
 #include <vector>
-
+#include <algorithm>
 using namespace std;
-
-bool compare(int i, int j) { // top is +
-	if (i < 0 && j < 0) {
-		return i > j;
-	}
-	else {
-		return i < j;
-	}
-}
-
 
 int main(void) {
 	int n = 0, m = 0;
-	int point = 0;
+	int temp = 0;
 	int answer = 0;
-	int max_plus_point = 0;
-	int max_minus_point = 0;
+	vector <int> plus_books;
+	vector <int> minus_books;
 	cin >> n >> m;
-
-	vector<int> books;
-
 	for (int i = 0; i < n; i++) {
-		cin >> point;
-		if (point >= 0) {
-			if (point > max_plus_point) { //+에서 최대값 찾기
-				max_plus_point = point;
-			}
+		cin >> temp;
+		if (temp >= 0) {
+			plus_books.push_back(temp);
 		}
-		if (point < 0) {
-			if (point < max_minus_point) { //-에서 최대값 찾기
-				max_minus_point = point;
-			}
+		else {
+			minus_books.push_back(temp);
 		}
-		books.push_back(point);
+		
 	}
-
-	point = 0; //사용자 시작 포인트
-	sort(books.begin(), books.end(), compare);
-
-	while (!books.empty()) {
-		if (m == 0)
-			break;
-
-		for (int i = 0; i < m; i++) {
-			if (books.empty()) {
+	sort(plus_books.begin(), plus_books.end(), greater<int>());
+	sort(minus_books.begin(), minus_books.end());
+	int plus_idx = 0;
+	int plus_size = plus_books.size();
+	int minus_size = minus_books.size();
+	int minus_idx = 0;
+	if (minus_size > 0) {
+		while (1) {
+			answer += (abs(minus_books[minus_idx]) * 2);
+			minus_idx += m;
+			if (minus_idx >= minus_size) {
 				break;
 			}
-			int top = books[books.size()-1];
-			if (point * top >= 0) { //이동 전-> 이동 후 부호에 따라 계산 다르게 하기
-				answer += abs(abs(point) - abs(top));
-			}
-			else {
-				answer += abs(abs(point) + abs(top));
-			}
-			point = top;
-			books.pop_back();
 		}
-		answer += abs(point);
-		point = 0;
 	}
-
-	if (abs(max_minus_point) > max_plus_point) {
-		answer -= abs(max_minus_point);
+	if (plus_size > 0) {
+		while (1) {
+			answer += (abs(plus_books[plus_idx]) * 2);
+			plus_idx += m;
+			if (plus_idx >= plus_size) {
+				break;
+			}
+		}
+	}
+	if (plus_size > 0 && minus_size > 0) {
+		if (abs(plus_books[0]) > abs(minus_books[0])) {
+			answer -= abs(plus_books[0]);
+		}
+		else {
+			answer -= abs(minus_books[0]);
+		}
+	}
+	else if (plus_size > 0) {
+		answer -= abs(plus_books[0]);
 	}
 	else {
-		answer -= abs(max_plus_point);
+		answer -= abs(minus_books[0]);
 	}
-
 	cout << answer;
 	return 0;
 }

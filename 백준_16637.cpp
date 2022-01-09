@@ -67,5 +67,5 @@ int func(int a, int b, char c)
 	else if (c == '*')
 		return a * b;
 	else
-		exit(1);
+		exit(1); 
 }
